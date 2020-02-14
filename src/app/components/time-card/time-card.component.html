@@ -1,0 +1,38 @@
+<div id="ClientPage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7"></div>
+      <div class="col-md-4 ">
+        <div class="card card-parent">
+          <div class="card-body">
+            <div>
+              <div class="halfDiv text-right">
+                <button (click)="switchRoute()">Clock In</button>
+              </div>
+              <div class="halfDiv text-left"><button>Time Card</button></div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <div class="halfDiv text-right">
+                    <button (click)="switchNewHistory('new')">New</button>
+                  </div>
+                  <div class="halfDiv text-left">
+                    <button (click)="switchNewHistory('history')">History</button>
+                  </div>
+                </div>
+                <app-time-card-new
+                  *ngIf="newHistory === 'new'"
+                ></app-time-card-new>
+                <app-time-card-history
+                  *ngIf="newHistory === 'history'"
+                ></app-time-card-history>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>

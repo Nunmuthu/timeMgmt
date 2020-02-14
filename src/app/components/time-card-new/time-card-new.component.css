@@ -1,0 +1,12 @@
+#ClientPage .card-parent{
+    width: 100%;
+}
+
+#ClientPage .row{
+    margin-top: 10%;
+}
+
+#ClientPage .halfDiv{
+    width: 50%;
+    display: inline-block;
+}

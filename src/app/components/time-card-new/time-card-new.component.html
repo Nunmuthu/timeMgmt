@@ -1,0 +1,110 @@
+<div id="ClientPage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="card card-parent">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="serviceType">Service Type:</label>
+              <select
+                name="serviceType"
+                class="form-control"
+                id="serviceType"
+              ></select>
+            </div>
+            <div class="form-group">
+              <label for="client">Start:</label>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" (click)="dp.toggleCalendar()">
+                    <i class="far fa-calendar-alt"></i>
+                  </span>
+                </div>
+                <input
+                  class="form-control form-control-sm"
+                  style="float:none"
+                  placeholder="Select a date"
+                  ngx-mydatepicker
+                  name="dateofCompletion"
+                  formControlName="dateofCompletion"
+                  [options]="myOptions"
+                  #dp="ngx-mydatepicker"
+                  (click)="dp.toggleCalendar()"
+                  readonly
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" (click)="dp.clearDate()">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span [owlDateTimeTrigger]="dt2"
+                    ><i class="fa fa-calendar"></i
+                  ></span>
+                </div>
+                <input
+                  [owlDateTime]="dt2"
+                  class="form-control form-control-sm"
+                  placeholder="Date Time"
+                />
+
+                <owl-date-time #dt2></owl-date-time>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="client">end:</label>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" (click)="dp1.toggleCalendar()">
+                      <i class="far fa-calendar-alt"></i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control form-control-sm"
+                    style="float:none"
+                    placeholder="Select a date"
+                    ngx-mydatepicker
+                    name="dateofCompletion"
+                    formControlName="dateofCompletion"
+                    [options]="myOptions"
+                    #dp1="ngx-mydatepicker"
+                    (click)="dp1.toggleCalendar()"
+                    readonly
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text" (click)="dp1.clearDate()">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span [owlDateTimeTrigger]="dt2"
+                      ><i class="fa fa-calendar"></i
+                    ></span>
+                  </div>
+                  <input
+                    [owlDateTime]="dt2"
+                    class="form-control form-control-sm"
+                    placeholder="Date Time"
+                  />
+  
+                  <owl-date-time #dt2></owl-date-time>
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="client">Client:</label>
+              <select name="client" class="form-control" id="client"></select>
+            </div>
+            <div class="form-group text-center">
+              <button>Check In</button>
+              <button>Check Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
